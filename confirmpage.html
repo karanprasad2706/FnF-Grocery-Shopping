@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .confirmation-container {
+            background-color: #fff;
+            border: 2px solid green;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            text-align: center; /* Center align the content */
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            font-family: 'Times New Roman', Times, serif;
+            margin-top: 0px; /* Add spacing between title and icon */
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .message::after {
+            content: "Now you can login with your ";
+            display: inline; /* Change to inline */
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin-top: 10px;
+        }
+
+        #changingText {
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+            animation: colorChange 1s infinite;
+            display: inline; /* Add inline display */
+        }
+
+        @keyframes colorChange {
+            0% {
+                background-position: 100%;
+            }
+            100% {
+                background-position: 0%;
+            }
+        }
+
+        .btn-container {
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: #008000;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn:hover {
+            background-color: #005600;
+        }
+
+        .icon {
+            width: 100px; /* Adjust icon size */
+            height: 100px;
+            margin-bottom: 5px; /* Add spacing between icon and title */
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const changingText = document.getElementById("changingText");
+            let isBlack = true;
+
+            setInterval(function () {
+                isBlack = !isBlack;
+                changingText.style.color = isBlack ? "green" : "red";
+            }, 1000);
+        });
+    </script>
+</head>
+<body>
+    <div class="confirmation-container">
+        <!-- Icon above the title -->
+        <img src="images/confirmdone-icon.png" alt="Done Icon" class="icon">
+        <h1>Congratulations!</h1>
+        <div class="message">
+            <p>Your registration was successful.</p>
+            <!-- Additional line -->
+           
+        </div>
+        
+        <!-- Button to go to the main website or login page -->
+        <div class="btn-container">
+            <p><span id="changingText">Gmail ID or Password</span></p>
+            <a href="login.php" class="btn">
+                Login Now
+            </a>
+        </div>
+    </div>
+</body>
+</html>
